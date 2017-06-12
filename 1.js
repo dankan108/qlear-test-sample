@@ -55,7 +55,7 @@ function init(){
 			// 下
 			console.log(map[x][y],x,y);
 			if(map[x][y].indexOf(2)!=-1){
-				x=x+1<numSize?x+1:numSize;
+				x=x+1<numSize?x+1:numSize-1;
 				console.log(map[x][y],x,y);
 				renderBox(oCell[x*numSize+y]);
 			}
