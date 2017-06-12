@@ -38,7 +38,7 @@ function init(){
 			// 上
 			console.log(map[x][y],x,y);
 			if(map[x][y].indexOf(0)!=-1){
-				x-=1;
+				x=x-1>=0?x-1:0;
 				console.log(map[x][y],x,y);
 				renderBox(oCell[x*numSize+y]);
 			}
@@ -47,7 +47,7 @@ function init(){
 			// 右
 			console.log(map[x][y],x,y);
 			if(map[x][y].indexOf(1)!=-1){
-				y+=1;
+				y=y+1<numSize?y+1:numSize-1;
 				renderBox(oCell[x*numSize+y]);
 			}
 		}
@@ -55,16 +55,16 @@ function init(){
 			// 下
 			console.log(map[x][y],x,y);
 			if(map[x][y].indexOf(2)!=-1){
-				x+=1;
+				x=x+1<numSize?x+1:numSize;
 				console.log(map[x][y],x,y);
 				renderBox(oCell[x*numSize+y]);
 			}
 		}
 		if(event.keyCode==37){
-			// 下
+			// 左
 			console.log(map[x][y],x,y);
 			if(map[x][y].indexOf(3)!=-1){
-				y-=1;
+				y=y-1>=0?y-1:0;
 				renderBox(oCell[x*numSize+y]);
 			}
 		}
@@ -118,5 +118,7 @@ function removeByValue(arr, val) {
   }
   return arr;
 }
+
+
 
 
